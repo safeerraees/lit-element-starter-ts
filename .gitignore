@@ -1,0 +1,9 @@
+node_modules/
+/lib/
+/test/
+custom-elements.json
+# top level source
+apimatic-widget.js
+apimatic-widget.js.map
+apimatic-widget.d.ts
+apimatic-widget.d.ts.map

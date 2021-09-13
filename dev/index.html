@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>APIMatic Widget Demo</title>
+    <link rel="stylesheet" href="./apimatic-widget.css" />
+    <script type="module" src="./apimatic-widget.bundled.js"></script>
+  </head>
+  <body>
+    <header>
+      <h1>APIMatic Widget</h1>
+      <h2>A web component for APIMatic Widget</h2>
+    </header>
+
+    <!-- <nav>
+  <a href="">Home</a>
+  <a href="examples/">Examples</a>
+  <a href="api/">API</a>
+  <a href="install/">Install</a>
+</nav> -->
+    <div id="main-wrapper">
+      <main>
+        <h1>&lt;apimatic-widget&gt;</h1>
+        <p>
+          <code>&lt;apimatic-widget&gt;</code> is an awesome element. It's a great introduction
+          to building web components with LitElement, with nice documentation
+          site as well.
+        </p>
+        <h2>As easy as HTML</h2>
+        <section class="rows">
+          <div>
+            <p><apimatic-widget></apimatic-widget></p>
+            <p>
+              <code>&lt;apimatic-widget&gt;</code> is just an HTML element. You
+              can it anywhere you can use HTML!
+            </p>
+            <pre
+              class="language-html"
+            ><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>apimatic-widget</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>apimatic-widget</span><span class="token punctuation">></span></span></code></pre>
+          </div>
+        </section>
+        <h2>Configure with attributes</h2>
+        <section class="columns">
+          <div>
+            <p>
+              <code>&lt;apimatic-widget&gt;</code> can be configured with
+              attributed in plain HTML.
+            </p>
+
+            <pre
+              class="language-html"
+            ><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>apimatic-widget</span> <span class="token attr-name">java</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>true<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>apimatic-widget</span><span class="token punctuation">></span></span></code></pre>
+          </div>
+          <div>
+            <p>
+              <apimatic-widget
+                java="true"
+                php="true"
+                dotNet="true"
+                ts="true"
+                python="true"
+                ruby="true"
+              ></apimatic-widget>
+            </p>
+          </div>
+        </section>
+        <h2>Declarative rendering</h2>
+        <section class="columns">
+          <div>
+            <p>
+              &lt;apimatic-widget&gt; can be used with declarative
+              rendering libraries like Angular, React, Vue, and lit-html
+            </p>
+            <pre
+              class="language-js"
+            ><code class="language-js"><span class="token keyword">import</span> <span class="token punctuation">{</span>html<span class="token punctuation">,</span> render<span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'lit-html'</span><span class="token punctuation">;</span><br><br><span class="token keyword">const</span> name <span class="token operator">=</span> <span class="token string">'lit-html'</span><span class="token punctuation">;</span><br><br><span class="token function">render</span><span class="token punctuation">(</span><br>  html<span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string"><br>    &lt;h2>This is a &lt;apimatic-widget&gt;</h2><br>    &lt;apimatic-widget .java=</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>true<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">>&lt;/apimatic-widget><br>  </span><span class="token template-punctuation string">`</span></span><span class="token punctuation">,</span><br>  document<span class="token punctuation">.</span>body<br><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+          </div>
+          <div>
+            <h2>This is a &lt;apimatic-widget&gt;</h2>
+            <apimatic-widget java=true></apimatic-widget>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <footer>
+      <p>
+        Made with
+        <a href="https://github.com/PolymerLabs/lit-starter-ts"
+          >lit-starter-ts</a
+        >
+      </p>
+    </footer>
+  </body>
+</html>
