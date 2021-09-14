@@ -25,7 +25,8 @@
     "serve": "wds --watch",
     "test": "wtr",
     "test:watch": "npm run test -- --watch",
-    "checksize": "rollup -c ; cat apimatic-widget.bundled.js | gzip -9 | wc -c ; rm apimatic-widget.bundled.js"
+    "checksize": "rollup -c ; cat apimatic-widget.bundled.js | gzip -9 | wc -c ; rm apimatic-widget.bundled.js",
+    "pokemon": "npm run build && npx rollup -c"
   },
   "keywords": [
     "web-components",
