@@ -18,23 +18,27 @@ export class APIMaticWidget extends LitElement {
   `;
 
   @property({type: String})
-  apiKey = 'aNevcjuZmnpNoxByvnLpxOQfIyDDZQy0UswqjiWxeD3d6VdOelI6t7whM02BEZGG';
+  apiKey = '';
+  @property({type: String})
+  platforms = '';
   @property({type: Boolean})
-  java = false;
-  @property({type: Boolean})
-  dotNet = false;
-  @property({type: Boolean})
-  php = false;
-  @property({type: Boolean})
-  ts = false;
-  @property({type: Boolean})
-  ruby = false;
-  @property({type: Boolean})
-  python = false;
+  sdkDocs = false;
 
   render() {
+    const platformsArray = this.platforms.split(',');
+    const dotNet =
+      platformsArray.find((el) => el.trim() === 'dotNet') !== undefined;
+    const java =
+      platformsArray.find((el) => el.trim() === 'java') !== undefined;
+    const python =
+      platformsArray.find((el) => el.trim() === 'python') !== undefined;
+    const php = platformsArray.find((el) => el.trim() === 'php') !== undefined;
+    const ruby =
+      platformsArray.find((el) => el.trim() === 'ruby') !== undefined;
+    const ts = platformsArray.find((el) => el.trim() === 'ts') !== undefined;
+
     return html`
-      ${this.dotNet
+      ${dotNet
         ? html`<div
             id="cs_net_standard_lib"
             @click=${this._onClick}
@@ -60,7 +64,7 @@ export class APIMaticWidget extends LitElement {
             </svg>
           </div>`
         : ''}
-      ${this.java
+      ${java
         ? html`<div
             id="java_eclipse_jre_lib"
             @click=${this._onClick}
@@ -87,7 +91,7 @@ export class APIMaticWidget extends LitElement {
             </svg>
           </div>`
         : ''}
-      ${this.php
+      ${php
         ? html`<div
             id="php_generic_lib_v2"
             @click=${this._onClick}
@@ -114,7 +118,7 @@ export class APIMaticWidget extends LitElement {
             </svg>
           </div>`
         : ''}
-      ${this.python
+      ${python
         ? html`<div
             id="python_generic_lib"
             @click=${this._onClick}
@@ -141,7 +145,7 @@ export class APIMaticWidget extends LitElement {
             </svg>
           </div>`
         : ''}
-      ${this.ruby
+      ${ruby
         ? html`<div
             id="ruby_generic_lib"
             @click=${this._onClick}
@@ -168,7 +172,7 @@ export class APIMaticWidget extends LitElement {
             </svg>
           </div>`
         : ''}
-      ${this.ts
+      ${ts
         ? html`<div
             id="ts_generic_lib"
             @click=${this._onClick}
@@ -192,14 +196,38 @@ export class APIMaticWidget extends LitElement {
             </svg>
           </div>`
         : ''}
+      ${this.sdkDocs
+        ? html`<div
+            id="cs_net_standard_lib"
+            @click=${this._onClick}
+            class=${classMap({icon: true})}
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="50"
+              height="50"
+              viewBox="0 0 25 25.2"
+            >
+              <defs>
+                <style>
+                  .aDotNet {
+                    fill: #00a4ef;
+                  }
+                </style>
+              </defs>
+              <path
+                class="aDotNet"
+                d="M0,2.293l6.6-.9,0,6.364L.006,7.8Zm6.595,6.2.005,6.37L.005,13.955V8.449Zm.8-7.215L16.142,0V7.677l-8.748.069Zm8.75,7.275,0,7.643L7.394,14.96,7.382,8.537Z"
+              />
+            </svg>
+          </div>`
+        : ''}
     `;
   }
 
   private async _onClick(event: Event) {
     try {
       const template = (event.currentTarget as Element).id;
-      console.log(template);
-      console.log(event.currentTarget);
       if (!template) {
         return;
       }
